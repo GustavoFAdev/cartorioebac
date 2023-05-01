@@ -142,7 +142,8 @@ int main()
 		printf ("\t\t escolha uma opção\n\n");
 		printf ("\t 1. registrar de nomes \n");
 		printf ("\t 2. consultar nomes \n");
-		printf ("\t 3. excluir inscrição\n\n\n");
+		printf ("\t 3. excluir inscrição\n");
+		printf ("\t 4. para sair do sistema \n\n ");
 		printf ("=============================================================== \n");
 		printf ("escolha uma opção:");
 		
@@ -164,6 +165,11 @@ int main()
 				
 			case 3:
 				excluir();
+				break;
+				
+			case 4:
+				printf ("volte sempre \n\n");
+				return 0;
 				break;
 				
 			default:
