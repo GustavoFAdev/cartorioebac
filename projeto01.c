@@ -2,10 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h> //biblioteca de strings
-int quebra()
-{
-	return (0);
-}
+
 
 int registro()
 {
@@ -14,7 +11,6 @@ int registro()
 	char nome[40];
 	char sobrenome[40];
 	char cargo[20];
-	int p=0;
 	
 	
 	printf ("digite o CPF a serregistrado \n");
@@ -31,16 +27,8 @@ int registro()
 	file = fopen (arquivo,"a"); //A de atualização (
 	fprintf(file, ","); //em file esta sendo escrito uma virgula(diferente de antes nao esta puxando informacaode uma variavel)
 	fclose (file);
-	
-		switch (p)	
-		{
-			case 3:
-				{
-					quebra();
-					break;
-				}
-		}	
-		
+
+
 	printf("digite o nome: \n");
 	scanf ("%s", nome);
 	file = fopen (arquivo, "a");
@@ -128,54 +116,73 @@ int excluir()
 	
 }
 int main()
-{
-	int op=0;
-	int x=1;
-	for (x=1;x=1;)
+
 	{
 	
-	system("cls");
+	int op=0;
+	int x=1;
+	char entrada[10] ="a";
+	int comparacao;
 	
-		setlocale(LC_ALL,"portuguese");
-		
-		printf ("\t\t\t LISTA DE ALUNOS\n\n\n");
-		printf ("\t\t escolha uma opção\n\n");
-		printf ("\t 1. registrar de nomes \n");
-		printf ("\t 2. consultar nomes \n");
-		printf ("\t 3. excluir inscrição\n");
-		printf ("\t 4. para sair do sistema \n\n ");
-		printf ("=============================================================== \n");
-		printf ("escolha uma opção:");
-		
-		
-		scanf("%d", &op);
+	printf ("cartorio EBAC\n\n");
+	printf ("digite sua senha:");
+	scanf ("%s", entrada);
 	
-		system ("cls");
-	    
-	    switch (op)
+	comparacao= strcmp (entrada,"admin");
+	
+	if (comparacao==0)
+	{
+	
+		for (x=1;x=1;)
 		{
-	
-			case 1:
-				registro();
-				break;
-				
-			case 2:
-				pesquisa();
-				break;
-				
-			case 3:
-				excluir();
-				break;
-				
-			case 4:
-				printf ("volte sempre \n\n");
-				return 0;
-				break;
-				
-			default:
-				printf("\t não há opções validas: \n");
-				system ("pause");
-				break;
+		
+		system("cls");
+		
+			setlocale(LC_ALL,"portuguese");
+			
+			printf ("\t\t\t LISTA DE ALUNOS\n\n\n");
+			printf ("\t\t escolha uma opção\n\n");
+			printf ("\t 1. registrar de nomes \n");
+			printf ("\t 2. consultar nomes \n");
+			printf ("\t 3. excluir inscrição\n");
+			printf ("\t 4. para sair do sistema \n\n ");
+			printf ("=============================================================== \n");
+			printf ("escolha uma opção:");
+			
+			
+			scanf("%d", &op);
+		
+			system ("cls");
+		    
+		    switch (op)
+			{
+		
+				case 1:
+					registro();
+					break;
+					
+				case 2:
+					pesquisa();
+					break;
+					
+				case 3:
+					excluir();
+					break;
+					
+				case 4:
+					printf ("volte sempre \n\n");
+					return 0;
+					break;
+					
+				default:
+					printf("\t não há opções validas: \n");
+					system ("pause");
+					break;
+			}
 		}
 	}
+	else
+	system("cls");
+	printf ("senha incorretra");
+	 
 }
