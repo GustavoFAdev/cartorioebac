@@ -96,10 +96,10 @@ int excluir()
 	printf ("quais nomes deseja excluir?:\n");
 	scanf ("%s",cpf);
 	
-	remove (cpf);
+	
 	
 	FILE *file;
-	file = fopen (cpf,"r");
+	file = fopen (cpf,"w");
 	
 	
 	if (file ==NULL)
@@ -110,10 +110,12 @@ int excluir()
 	
 	else
 	{
+		fclose(file);
+		remove(cpf);
 		printf ("\t usuario deletado!\n");
 		system ("pause");
+		
 	}
-	
 }
 int main()
 
